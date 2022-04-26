@@ -5,6 +5,9 @@ import useGoogleFonts from './hooks/useGoogleFonts';
 import AppLoading from 'expo-app-loading';
 import Navigation from './navigation';
 
+import { store } from './store/store';
+import { Provider } from 'react-redux';
+
 export default function App() {
   const isLoadingComplete = useGoogleFonts();
 
@@ -12,10 +15,12 @@ export default function App() {
     return <AppLoading />;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation />
-        <StatusBar />
-      </SafeAreaProvider>
+      <Provider store={store}>
+        <SafeAreaProvider>
+          <Navigation />
+          <StatusBar />
+        </SafeAreaProvider>
+      </Provider>
     );
   }
 }
