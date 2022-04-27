@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export interface RecipesState {
-  data: [];
-}
+import { categories } from '../../data/categories';
+import { recipes } from '../../data/recipes';
+import { RecipesState } from '../../types/store/recipesSlice';
 
 const initialState: RecipesState = {
-  data: [],
+  data: recipes,
+  categories: categories,
 };
 
 export const recipesSlice = createSlice({
