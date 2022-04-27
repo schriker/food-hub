@@ -1,4 +1,6 @@
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
+import Paragraph from '../components/Paragraph/Paragraph';
 import { useAppSelector } from '../hooks/useAppSelector';
 
 export default function FeedScreen() {
@@ -6,7 +8,7 @@ export default function FeedScreen() {
 
   return (
     <View>
-      <Text style={{ fontFamily: 'Poppins_400Regular' }}>{data[0].name}</Text>
+      <Paragraph>{data[0].name}</Paragraph>
     </View>
   );
 }

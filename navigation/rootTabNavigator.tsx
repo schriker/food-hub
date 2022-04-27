@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import LogoTitle from '../components/LogoTitle/LogoTitle';
 import TabBarIcon from '../components/TabBarIcon/TabBarIcon';
 import Colors from '../constants/Colors';
 import BookmarksScreen from '../screens/BookmarksScreen';
@@ -15,6 +16,10 @@ const ROOT_TABS: RootTab[] = [
     name: 'Feed',
     component: FeedScreen,
     icon: 'menu',
+    options: {
+      headerTitle: () => <LogoTitle />,
+      headerTitleAlign: 'left',
+    },
   },
   {
     name: 'Explore',
@@ -47,6 +52,10 @@ export default function RootTabNavigator() {
       screenOptions={{
         tabBarActiveTintColor: Colors.main,
         tabBarInactiveTintColor: Colors.black,
+        headerTitleStyle: {
+          fontFamily: 'Poppins_400Regular',
+          color: Colors.black,
+        },
         tabBarLabelStyle: {
           fontFamily: 'Poppins_400Regular',
         },
@@ -58,6 +67,7 @@ export default function RootTabNavigator() {
           name={tab.name}
           component={tab.component}
           options={{
+            ...tab.options,
             tabBarIcon: ({ color }) => (
               <TabBarIcon name={tab.icon} color={color} />
             ),
