@@ -1,26 +1,22 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import LogoTitle from '../components/LogoTitle/LogoTitle';
 import TabBarIcon from '../components/TabBarIcon/TabBarIcon';
 import Colors from '../constants/Colors';
 import BookmarksScreen from '../screens/BookmarksScreen';
 import ExploreScreen from '../screens/ExploreScreen';
-import FeedScreen from '../screens/FeedScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UserScreen from '../screens/UserScreen';
 import { RootTab } from '../types/rootTab';
-import FeedStackNavigator from './feedStackNavigator';
+import FeedStackNavigator from './FeedStackNavigator';
 import { RootTabParamList } from './types';
 
 const ROOT_TABS: RootTab[] = [
   {
-    name: 'Home',
-    // component: FeedScreen,
+    name: 'Feed',
     component: FeedStackNavigator,
     icon: 'menu',
     options: {
-      headerTitle: () => <LogoTitle />,
-      headerTitleAlign: 'left',
+      headerShown: false,
     },
   },
   {
@@ -50,7 +46,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 export default function RootTabNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Feed"
       screenOptions={{
         tabBarActiveTintColor: Colors.main,
         tabBarInactiveTintColor: Colors.black,
@@ -72,6 +68,13 @@ export default function RootTabNavigator() {
           paddingBottom: 5,
           height: 60,
           elevation: 0,
+          shadowColor: '#000',
+          shadowOpacity: 0.2,
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowRadius: 10
         },
         tabBarShowLabel: false,
       }}

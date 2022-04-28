@@ -8,7 +8,7 @@ declare global {
 }
 
 export type RootTabParamList = {
-  Home: NavigatorScreenParams<FeedStackParamList> | undefined;
+  Feed: NavigatorScreenParams<FeedStackParamList> | undefined;
   Explore: undefined;
   Search: undefined;
   Bookmarks: undefined;
@@ -16,7 +16,7 @@ export type RootTabParamList = {
 };
 
 export type FeedStackParamList = {
-  Feed: undefined;
+  Home: undefined;
   Recipe: { id: number };
 };
 

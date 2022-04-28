@@ -1,11 +1,17 @@
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
 import Colors from '../../constants/Colors';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { getCategoryById } from '../../store/slices/recipesSlice';
 import { RecipeCardProps } from '../../types/recipeCard';
-import Paragraph from '../Paragraph/Paragraph';
+import CategoryCircle from '../CategoryCircle/CategoryCircle';
 
 export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
   const navigation = useNavigation();
+  const category = useAppSelector((state) =>
+    getCategoryById(state, recipe.categoryId)
+  );
 
   const handlePress = () => {
     navigation.navigate('Recipe', { id: recipe.id });
@@ -20,7 +26,7 @@ export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
       ]}
     >
       <Pressable onPress={handlePress}>
-        <Paragraph>{recipe.id}</Paragraph>
+        <CategoryCircle category={category!} />
         <Image source={{ uri: recipe.photo }} style={styles.photo} />
       </Pressable>
     </View>
