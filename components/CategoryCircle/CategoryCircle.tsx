@@ -1,3 +1,4 @@
+import React from 'react';
 import { Image, StyleSheet, View, Text } from 'react-native';
 import Colors from '../../constants/Colors';
 import { CategoryCircleProps } from '../../types/categoryCircle';

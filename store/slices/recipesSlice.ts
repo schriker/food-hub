@@ -7,21 +7,31 @@ import { RootState } from '../store';
 const initialState: RecipesState = {
   data: recipes,
   categories: categories,
+  bookmarked: [],
 };
 
 export const recipesSlice = createSlice({
   name: 'recipes',
   initialState,
-  reducers: {},
+  reducers: {
+    addToBookmars: (state, action: PayloadAction<number>) => {
+      state.bookmarked.push(action.payload);
+    },
+    removeFromBookmarks: (state, action: PayloadAction<number>) => {
+      state.bookmarked = state.bookmarked.filter((id) => id !== action.payload);
+    },
+  },
 });
 
-// Action creators are generated for each case reducer function
-// export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { addToBookmars, removeFromBookmarks } = recipesSlice.actions;
 
 export const getRecipeById = (state: RootState, recipeId: number) =>
   state.recipes.data.find((recipe) => recipe.id === recipeId);
 
 export const getCategoryById = (state: RootState, categoryId: number) =>
   state.recipes.categories.find((category) => category.id === categoryId);
+
+export const isBookmarked = (state: RootState, recipeId: number) =>
+  state.recipes.bookmarked.some((id) => id === recipeId);
 
 export default recipesSlice.reducer;
