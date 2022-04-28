@@ -8,6 +8,7 @@ import { getCategoryById } from '../../store/slices/recipesSlice';
 import { RecipeCardProps } from '../../types/recipeCard';
 import BookmarkButton from '../BookmarkButton/BookmarkButton';
 import CategoryCircle from '../CategoryCircle/CategoryCircle';
+import FeedRecipeDetails from '../FeedRecipeDetails/FeedRecipeDetails';
 import MediumHeading from '../MediumHeading/MediumHeading';
 
 export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
@@ -43,6 +44,11 @@ export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
           </ImageBackground>
         </View>
       </Pressable>
+      <FeedRecipeDetails
+        time={recipe.time}
+        level={recipe.level}
+        kcal={recipe.kcal}
+      />
     </View>
   );
 }

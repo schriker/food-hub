@@ -8,7 +8,7 @@ export default function Paragraph({
 }: TextComponentProps) {
   return (
     <Text
-      style={[style, { fontFamily: 'Poppins_400Regular', fontSize: 28 }]}
+      style={[style, { fontFamily: 'Poppins_400Regular', fontSize: 14 }]}
       {...rest}
     >
       {children}

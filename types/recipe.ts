@@ -1,9 +1,9 @@
 import { Ingredient } from './ingredient';
 
 export enum Level {
-  EASY,
-  MEDIUM,
-  HARD,
+  EASY = 'Easy',
+  MEDIUM = 'Medium',
+  HARD = 'Hard',
 }
 
 export interface Recipe {
