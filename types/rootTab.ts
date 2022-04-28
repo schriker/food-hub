@@ -1,7 +1,7 @@
 import { Feather } from '@expo/vector-icons';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { RouteConfigComponent, RouteProp } from '@react-navigation/native';
-import React, { ComponentType } from 'react';
+import { RouteProp } from '@react-navigation/native';
+import React from 'react';
 import { RootTabParamList } from '../navigation/types';
 
 export type RootTab = {

@@ -9,12 +9,14 @@ import FeedScreen from '../screens/FeedScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UserScreen from '../screens/UserScreen';
 import { RootTab } from '../types/rootTab';
+import FeedStackNavigator from './feedStackNavigator';
 import { RootTabParamList } from './types';
 
 const ROOT_TABS: RootTab[] = [
   {
-    name: 'Feed',
-    component: FeedScreen,
+    name: 'Home',
+    // component: FeedScreen,
+    component: FeedStackNavigator,
     icon: 'menu',
     options: {
       headerTitle: () => <LogoTitle />,
@@ -43,12 +45,12 @@ const ROOT_TABS: RootTab[] = [
   },
 ];
 
-const TabNavigator = createBottomTabNavigator<RootTabParamList>();
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export default function RootTabNavigator() {
   return (
-    <TabNavigator.Navigator
-      initialRouteName="Feed"
+    <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors.main,
         tabBarInactiveTintColor: Colors.black,
@@ -59,10 +61,23 @@ export default function RootTabNavigator() {
         tabBarLabelStyle: {
           fontFamily: 'Poppins_400Regular',
         },
+        headerStyle: {
+          shadowOpacity: 0,
+        },
+        tabBarStyle: {
+          position: 'absolute',
+          margin: 35,
+          borderRadius: 10,
+          borderTopWidth: 0,
+          paddingBottom: 5,
+          height: 60,
+          elevation: 0,
+        },
+        tabBarShowLabel: false,
       }}
     >
       {ROOT_TABS.map((tab, index) => (
-        <TabNavigator.Screen
+        <Tab.Screen
           key={index}
           name={tab.name}
           component={tab.component}
@@ -74,6 +89,6 @@ export default function RootTabNavigator() {
           }}
         />
       ))}
-    </TabNavigator.Navigator>
+    </Tab.Navigator>
   );
 }

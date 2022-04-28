@@ -159,7 +159,7 @@ export const recipes: Recipe[] = [
     level: Level.MEDIUM,
     time: '30 min.',
     photo:
-      'https://www.tasteofhome.com/wp-content/uploads/2018/01/Banana-Oat-Muffins_EXPS_TOHAM22_35916_B11_11_7b-13.jpg?fit=700,1024',
+      'https://www.thespruceeats.com/thmb/81SDOJLTueqx-LZk1Ff9wuA4w0s=/2667x2000/smart/filters:no_upscale()/BananaOatmealMuffins9-b120993a1b6145e095ba022739db15f1.jpg',
     steps: [
       'Preheat oven to 400 degrees F.',
       'To clean artichokes, first, cut off the stem/stalk. Peel off the tough outer layers by hand. When you reach the softer layers, use a serrated knife to cut off about ¾ inches from the top. Now, cut artichoke in half length-wise. Then, using a spoon, remove the fuzzy choke on the inside.',
@@ -344,7 +344,7 @@ export const recipes: Recipe[] = [
     level: Level.EASY,
     time: '25 min.',
     photo:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-22858_12-a8c9d53.jpg?quality=90&webp=true&resize=800,600',
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/white-sourdough-a59e971.jpg?quality=90&webp=true&resize=800,600',
     steps: [
       'Preheat oven to 400 degrees F.',
       'To clean artichokes, first, cut off the stem/stalk. Peel off the tough outer layers by hand. When you reach the softer layers, use a serrated knife to cut off about ¾ inches from the top. Now, cut artichoke in half length-wise. Then, using a spoon, remove the fuzzy choke on the inside.',
