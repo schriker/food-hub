@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import PromoCarousel from '../components/PromoCarousel/PromoCarousel';
+import FeedScreenListHeader from '../components/FeedScreenListHeader/FeedScreenListHeader';
 import RecipeCard from '../components/RecipeCard/RecipeCard';
 import { useAppSelector } from '../hooks/useAppSelector';
 
@@ -12,7 +12,7 @@ export default function FeedScreen() {
       <FlatList
         data={data}
         keyExtractor={(recipe) => recipe.id.toString()}
-        ListHeaderComponent={<PromoCarousel />}
+        ListHeaderComponent={<FeedScreenListHeader />}
         renderItem={({ item, index }) => (
           <RecipeCard recipe={item} index={index} length={data.length} />
         )}

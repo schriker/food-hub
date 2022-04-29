@@ -3,7 +3,7 @@ import React from 'react';
 import { Image, StyleSheet, Pressable } from 'react-native';
 import { CategoryCardProps } from '../../types/categoryCard';
 
-export default function CategoryCard({ category }: CategoryCardProps) {
+export default function CategoryCard({ category, style }: CategoryCardProps) {
   const navigation = useNavigation();
 
   const handlePress = () => {
@@ -16,7 +16,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Pressable
       onPress={handlePress}
-      style={[styles.conatiner, { backgroundColor: category.color }]}
+      style={[styles.conatiner, { backgroundColor: category.color }, style]}
     >
       <Image
         source={category.photo}
