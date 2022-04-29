@@ -4,6 +4,7 @@ declare global {
   namespace ReactNavigation {
     interface RootParamList extends RootTabParamList {}
     interface RootParamList extends FeedStackParamList {}
+    interface RootParamList extends ExploreStackParamList {}
   }
 }
 
@@ -20,4 +21,15 @@ export type FeedStackParamList = {
   Recipe: { id: number };
 };
 
+export type ExploreStackParamList = {
+  Categories: undefined;
+  CategoryModal: { screen: 'Category'; params: { id: number } };
+  Category: { id: number };
+  ExploreRecipe: { id: number };
+};
+
 export type RecipeScreenRouteProp = RouteProp<FeedStackParamList, 'Recipe'>;
+export type CategoryScreenRouteProp = RouteProp<
+  ExploreStackParamList,
+  'Category'
+>;

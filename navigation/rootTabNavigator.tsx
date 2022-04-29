@@ -7,6 +7,7 @@ import ExploreScreen from '../screens/ExploreScreen';
 import SearchScreen from '../screens/SearchScreen';
 import UserScreen from '../screens/UserScreen';
 import { RootTab } from '../types/rootTab';
+import ExploreStackNavigator from './ExploreStackNavigator';
 import FeedStackNavigator from './FeedStackNavigator';
 import { RootTabParamList } from './types';
 
@@ -21,7 +22,7 @@ const ROOT_TABS: RootTab[] = [
   },
   {
     name: 'Explore',
-    component: ExploreScreen,
+    component: ExploreStackNavigator,
     icon: 'grid',
   },
   {
@@ -74,7 +75,7 @@ export default function RootTabNavigator() {
             width: 0,
             height: 0,
           },
-          shadowRadius: 10
+          shadowRadius: 10,
         },
         tabBarShowLabel: false,
       }}

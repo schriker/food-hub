@@ -34,4 +34,7 @@ export const getCategoryById = (state: RootState, categoryId: number) =>
 export const isBookmarked = (state: RootState, recipeId: number) =>
   state.recipes.bookmarked.some((id) => id === recipeId);
 
+export const getRecipesByCategoryId = (state: RootState, categoryId: number) =>
+  state.recipes.data.filter((recipe) => recipe.categoryId === categoryId);
+
 export default recipesSlice.reducer;

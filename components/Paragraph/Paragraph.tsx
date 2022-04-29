@@ -1,4 +1,4 @@
-import { Text, TextProps } from 'react-native';
+import { Text } from 'react-native';
 import { TextComponentProps } from '../../types/text';
 
 export default function Paragraph({
@@ -8,7 +8,7 @@ export default function Paragraph({
 }: TextComponentProps) {
   return (
     <Text
-      style={[style, { fontFamily: 'Poppins_400Regular', fontSize: 14 }]}
+      style={[{ fontFamily: 'Poppins_400Regular', fontSize: 14 }, style]}
       {...rest}
     >
       {children}

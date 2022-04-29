@@ -1,10 +1,16 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, StyleSheet, Pressable } from 'react-native';
 import { CategoryCardProps } from '../../types/categoryCard';
 
 export default function CategoryCard({ category }: CategoryCardProps) {
+  const navigation = useNavigation();
+
   const handlePress = () => {
-    console.log(category.id);
+    navigation.navigate('CategoryModal', {
+      screen: 'Category',
+      params: { id: category.id },
+    });
   };
 
   return (
