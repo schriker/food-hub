@@ -23,11 +23,7 @@ export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
 
   return (
     <View
-      style={[
-        styles.container,
-        index === 0 ? styles.firstChild : null,
-        index === length - 1 ? styles.lastChild : null,
-      ]}
+      style={[styles.container, index === length - 1 ? styles.lastChild : null]}
     >
       <View style={styles.header}>
         <CategoryCircle category={category!} />
@@ -70,9 +66,6 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: 80,
-  },
-  firstChild: {
-    marginTop: 30,
   },
   lastChild: {
     marginBottom: 115,
