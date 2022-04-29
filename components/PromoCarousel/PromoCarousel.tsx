@@ -2,7 +2,7 @@ import { View, Image, StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 
-const WIDTH = Dimensions.get('window').width - 20;
+const WIDTH = Dimensions.get('window').width;
 const DATA = [
   {
     id: 1,
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginBottom: -15,
-    marginHorizontal: 10,
   },
   photo: {
     height: '100%',
