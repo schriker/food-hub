@@ -1,3 +1,3 @@
 export type BookmarkButtonProps = {
-  recipeId: number;
+  recipeId?: number;
 };

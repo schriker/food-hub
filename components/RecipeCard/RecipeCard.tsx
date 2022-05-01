@@ -11,7 +11,11 @@ import CategoryCircle from '../CategoryCircle/CategoryCircle';
 import FeedRecipeDetails from '../FeedRecipeDetails/FeedRecipeDetails';
 import MediumHeading from '../MediumHeading/MediumHeading';
 
-export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
+export default function RecipeCard({
+  recipe,
+  index,
+  length = 0,
+}: RecipeCardProps) {
   const navigation = useNavigation();
   const category = useAppSelector((state) =>
     getCategoryById(state, recipe.categoryId)
@@ -23,12 +27,17 @@ export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
 
   return (
     <View
-      style={[styles.container, index === length - 1 ? styles.lastChild : null]}
+      style={[
+        index !== undefined ? styles.containerWithMargin : styles.container,
+        index === length - 1 ? styles.lastChild : null,
+      ]}
     >
-      <View style={styles.header}>
-        <CategoryCircle category={category!} />
-        <BookmarkButton recipeId={recipe.id} />
-      </View>
+      {index !== undefined && (
+        <View style={styles.header}>
+          <CategoryCircle category={category!} />
+          <BookmarkButton recipeId={recipe.id} />
+        </View>
+      )}
       <Pressable onPress={handlePress}>
         <View>
           <ImageBackground source={{ uri: recipe.photo }} style={styles.photo}>
@@ -50,8 +59,11 @@ export default function RecipeCard({ recipe, index, length }: RecipeCardProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerWithMargin: {
     marginVertical: 15,
+    backgroundColor: Colors.white,
+  },
+  container: {
     backgroundColor: Colors.white,
   },
   header: {

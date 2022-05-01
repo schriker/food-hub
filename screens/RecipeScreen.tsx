@@ -1,26 +1,23 @@
-import { useNavigation, useRoute } from '@react-navigation/native';
-import { useLayoutEffect } from 'react';
-import { View, Text } from 'react-native';
-import { useAppSelector } from '../hooks/useAppSelector';
-import { RecipeScreenRouteProp } from '../navigation/types';
-import { getRecipeById } from '../store/slices/recipesSlice';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import RecipeCard from '../components/RecipeCard/RecipeCard';
+import RecipeTabs from '../components/RecipeTabs/RecipeTabs';
+import useRecipe from '../hooks/useRecipe';
 
 export default function RecipeScreen() {
-  const navigation = useNavigation();
-  const route = useRoute<RecipeScreenRouteProp>();
-  const recipe = useAppSelector((state) =>
-    getRecipeById(state, route.params.id)
-  );
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: recipe?.name,
-    });
-  }, [recipe]);
+  const recipe = useRecipe();
 
   return (
-    <View>
-      <Text>{recipe?.name}</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <RecipeCard recipe={recipe!} />
+      <RecipeTabs />
+    </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

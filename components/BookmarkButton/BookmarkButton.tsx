@@ -1,9 +1,11 @@
 import { Feather } from '@expo/vector-icons';
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
 import { Pressable } from 'react-native';
 import Colors from '../../constants/Colors';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useAppSelector } from '../../hooks/useAppSelector';
+import { RecipeScreenRouteProp } from '../../navigation/types';
 import {
   addToBookmars,
   isBookmarked,
@@ -12,14 +14,16 @@ import {
 import { BookmarkButtonProps } from '../../types/bookmakrButton';
 
 export default function BookmarkButton({ recipeId }: BookmarkButtonProps) {
+  const route = useRoute<RecipeScreenRouteProp>();
+  const id = recipeId ?? route.params.id;
   const dipstach = useAppDispatch();
-  const bookmarked = useAppSelector((state) => isBookmarked(state, recipeId));
+  const bookmarked = useAppSelector((state) => isBookmarked(state, id));
 
   const handlePress = () => {
     if (bookmarked) {
-      dipstach(removeFromBookmarks(recipeId));
+      dipstach(removeFromBookmarks(id));
     } else {
-      dipstach(addToBookmars(recipeId));
+      dipstach(addToBookmars(id));
     }
   };
 

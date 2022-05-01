@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { categories } from '../../data/categories';
 import { recipes } from '../../data/recipes';
+import { Recipe } from '../../types/recipe';
 import { RecipesState } from '../../types/store/recipesSlice';
 import { RootState } from '../store';
 

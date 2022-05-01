@@ -9,7 +9,7 @@ import Paragraph from '../Paragraph/Paragraph';
 export default function RecipeSmall({ recipe }: RecipeSmallProps) {
   const navigation = useNavigation();
   const handlePress = () => {
-    navigation.navigate('ExploreRecipe', { id: recipe.id });
+    navigation.navigate('Recipe', { id: recipe.id });
   };
 
   return (

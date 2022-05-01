@@ -19,13 +19,17 @@ export type RootTabParamList = {
 export type FeedStackParamList = {
   Home: undefined;
   Recipe: { id: number };
+  CategoryModal: { screen: 'Category'; params: { id: number } };
 };
 
 export type ExploreStackParamList = {
   Categories: undefined;
   CategoryModal: { screen: 'Category'; params: { id: number } };
+} & CategoryStackParamList;
+
+export type CategoryStackParamList = {
   Category: { id: number };
-  ExploreRecipe: { id: number };
+  Recipe: { id: number };
 };
 
 export type RecipeScreenRouteProp = RouteProp<FeedStackParamList, 'Recipe'>;

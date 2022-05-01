@@ -1,27 +1,22 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CategoryScreen from '../screens/CategoryScreen';
+import Colors from '../constants/Colors';
 import ExploreScreen from '../screens/ExploreScreen';
-import RecipeScreen from '../screens/RecipeScreen';
+import CategoryStackNavigator from './CategoryStackNavigator';
 import { ExploreStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<ExploreStackParamList>();
-const CategoryStack = createNativeStackNavigator();
-
-function CategoryStackNavigator() {
-  return (
-    <CategoryStack.Navigator initialRouteName="Category">
-      <Stack.Screen name="Category" component={CategoryScreen}></Stack.Screen>
-      <Stack.Screen
-        name="ExploreRecipe"
-        component={RecipeScreen}
-      ></Stack.Screen>
-    </CategoryStack.Navigator>
-  );
-}
 
 export default function ExploreStackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Categories">
+    <Stack.Navigator
+      initialRouteName="Categories"
+      screenOptions={{
+        headerTitleStyle: {
+          fontFamily: 'Poppins_400Regular',
+          color: Colors.black,
+        },
+      }}
+    >
       <Stack.Screen
         name="Categories"
         component={ExploreScreen}
