@@ -3,9 +3,7 @@ import React from 'react';
 import TabBarIcon from '../components/TabBarIcon/TabBarIcon';
 import Colors from '../constants/Colors';
 import BookmarksScreen from '../screens/BookmarksScreen';
-import ExploreScreen from '../screens/ExploreScreen';
-import SearchScreen from '../screens/SearchScreen';
-import UserScreen from '../screens/UserScreen';
+import AddScreen from '../screens/AddScreen';
 import { RootTab } from '../types/rootTab';
 import ExploreStackNavigator from './ExploreStackNavigator';
 import FeedStackNavigator from './FeedStackNavigator';
@@ -26,19 +24,14 @@ const ROOT_TABS: RootTab[] = [
     icon: 'grid',
   },
   {
-    name: 'Search',
-    component: SearchScreen,
-    icon: 'search',
+    name: 'Add',
+    component: AddScreen,
+    icon: 'plus-circle',
   },
   {
     name: 'Bookmarks',
     component: BookmarksScreen,
     icon: 'bookmark',
-  },
-  {
-    name: 'User',
-    component: UserScreen,
-    icon: 'user',
   },
 ];
 

@@ -11,7 +11,7 @@ declare global {
 export type RootTabParamList = {
   Feed: NavigatorScreenParams<FeedStackParamList> | undefined;
   Explore: undefined;
-  Search: undefined;
+  Add: undefined;
   Bookmarks: undefined;
   User: undefined;
 };

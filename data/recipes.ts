@@ -5,8 +5,6 @@ export const recipes: Recipe[] = [
     id: 1,
     categoryId: 1,
     name: 'Mediterranean Roasted Artichoke',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 1000,
     level: Level.EASY,
     time: '60 min.',
@@ -42,8 +40,6 @@ export const recipes: Recipe[] = [
     id: 2,
     categoryId: 2,
     name: 'Roast beetroot soup with blue cheese toasts',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 442,
     level: Level.EASY,
     time: '105 min.',
@@ -79,8 +75,6 @@ export const recipes: Recipe[] = [
     id: 3,
     categoryId: 3,
     name: 'Black Salsify Vegetables',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 339,
     level: Level.EASY,
     time: '30 min.',
@@ -116,8 +110,6 @@ export const recipes: Recipe[] = [
     id: 4,
     categoryId: 4,
     name: 'Sautéed Brussels Sprouts',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 114,
     level: Level.EASY,
     time: '20 min.',
@@ -153,8 +145,6 @@ export const recipes: Recipe[] = [
     id: 5,
     categoryId: 5,
     name: 'Banana Oat Muffins',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 414,
     level: Level.MEDIUM,
     time: '30 min.',
@@ -190,8 +180,6 @@ export const recipes: Recipe[] = [
     id: 6,
     categoryId: 6,
     name: 'Roasted carrot, rocket & lentil salad',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 596,
     level: Level.MEDIUM,
     time: '45 min.',
@@ -227,8 +215,6 @@ export const recipes: Recipe[] = [
     id: 7,
     categoryId: 7,
     name: 'Cauliflower soup',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 176,
     level: Level.HARD,
     time: '40 min.',
@@ -264,8 +250,6 @@ export const recipes: Recipe[] = [
     id: 8,
     categoryId: 8,
     name: 'Chilli con carne recipe',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 387,
     level: Level.HARD,
     time: '70 min.',
@@ -301,8 +285,6 @@ export const recipes: Recipe[] = [
     id: 9,
     categoryId: 9,
     name: 'Tomato & basil soup',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 213,
     level: Level.EASY,
     time: '25 min.',
@@ -338,8 +320,6 @@ export const recipes: Recipe[] = [
     id: 10,
     categoryId: 10,
     name: 'White sourdough',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 171,
     level: Level.EASY,
     time: '25 min.',
@@ -375,8 +355,6 @@ export const recipes: Recipe[] = [
     id: 11,
     categoryId: 10,
     name: 'Easy white bread',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper at nibh vitae interdum. Donec nec lectus volutpat turpis condimentum blandit et convallis sem.',
     kcal: 204,
     level: Level.EASY,
     time: '225 min.',

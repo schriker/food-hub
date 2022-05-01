@@ -9,12 +9,11 @@ export enum Level {
 export interface Recipe {
   id: number;
   name: string;
-  description: string;
-  steps: string[];
-  ingredients: Ingredient[];
   time: string;
   kcal: number;
-  level: Level;
   photo: string;
+  level: Level;
   categoryId: number;
+  steps: string[];
+  ingredients: Ingredient[];
 }
