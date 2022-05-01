@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { categories } from '../../data/categories';
 import { recipes } from '../../data/recipes';
+import { Recipe } from '../../types/recipe';
 import { RecipesState } from '../../types/store/recipesSlice';
 import { RootState } from '../store';
 
@@ -20,10 +21,14 @@ export const recipesSlice = createSlice({
     removeFromBookmarks: (state, action: PayloadAction<number>) => {
       state.bookmarked = state.bookmarked.filter((id) => id !== action.payload);
     },
+    addRecipe: (state, action: PayloadAction<Recipe>) => {
+      state.data.push(action.payload);
+    },
   },
 });
 
-export const { addToBookmars, removeFromBookmarks } = recipesSlice.actions;
+export const { addToBookmars, removeFromBookmarks, addRecipe } =
+  recipesSlice.actions;
 
 export const getRecipeById = (state: RootState, recipeId: number) =>
   state.recipes.data.find((recipe) => recipe.id === recipeId);

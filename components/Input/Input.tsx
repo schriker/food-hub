@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import Colors from '../../constants/Colors';
 import { InputProps } from '../../types/input';
 import Paragraph from '../Paragraph/Paragraph';
@@ -28,7 +33,7 @@ export default function Input({
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   label: {
     fontSize: 14,
