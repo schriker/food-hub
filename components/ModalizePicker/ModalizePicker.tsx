@@ -1,5 +1,5 @@
 import { Picker } from '@react-native-picker/picker';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import { Portal } from 'react-native-portalize';
@@ -14,10 +14,17 @@ export default function ModalizePicker({
   buttonText,
   label,
   error,
+  value,
   errorMessage,
 }: ModalizePickerProps) {
-  const [selectedOption, setSelectedOption] = useState();
+  const [selectedOption, setSelectedOption] = useState<string>();
   const modalizeRef = useRef<Modalize>(null);
+
+  useEffect(() => {
+    if (!value) {
+      setSelectedOption(buttonText);
+    }
+  }, [value]);
 
   const onOpen = () => {
     modalizeRef.current?.open();

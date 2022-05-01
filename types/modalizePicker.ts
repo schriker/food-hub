@@ -7,6 +7,7 @@ interface PickerOption {
 
 export type ModalizePickerProps = {
   options: PickerOption[];
+  value: any;
   label: string;
   buttonText: string;
   error: FieldError | undefined;

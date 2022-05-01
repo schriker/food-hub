@@ -6,7 +6,7 @@ import { useAppSelector } from './useAppSelector';
 export default function useRecipe() {
   const route = useRoute<RecipeScreenRouteProp>();
   const recipe = useAppSelector((state) =>
-    getRecipeById(state, route.params.id)
+    getRecipeById(state, route.params?.id)
   );
 
   return recipe;

@@ -2,14 +2,16 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Colors from '../../constants/Colors';
 import useRecipe from '../../hooks/useRecipe';
+import { StepsTabProps } from '../../types/stepsTab';
 import Paragraph from '../Paragraph/Paragraph';
 
-export default function StepsTab() {
+export default function StepsTab({ steps }: StepsTabProps) {
   const recipe = useRecipe();
+  const data = steps ?? recipe?.steps
 
   return (
     <View style={styles.container}>
-      {recipe?.steps.map((step, index) => (
+      {data!.map((step, index) => (
         <View key={index} style={styles.step}>
           <Paragraph style={styles.stepNumber}>{index + 1}</Paragraph>
           <Paragraph style={styles.stepDescription}>{step}</Paragraph>
