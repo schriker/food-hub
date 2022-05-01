@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { categories } from '../../data/categories';
 import { recipes } from '../../data/recipes';
-import { Recipe } from '../../types/recipe';
 import { RecipesState } from '../../types/store/recipesSlice';
 import { RootState } from '../store';
 
@@ -37,5 +36,10 @@ export const isBookmarked = (state: RootState, recipeId: number) =>
 
 export const getRecipesByCategoryId = (state: RootState, categoryId: number) =>
   state.recipes.data.filter((recipe) => recipe.categoryId === categoryId);
+
+export const getBookmarks = (state: RootState) =>
+  state.recipes.data.filter((recipe) =>
+    state.recipes.bookmarked.includes(recipe.id)
+  );
 
 export default recipesSlice.reducer;

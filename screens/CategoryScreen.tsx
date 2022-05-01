@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useLayoutEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import RecipeSmall from '../components/RecipeSmall/RecipeSmall';
 import { useAppSelector } from '../hooks/useAppSelector';
