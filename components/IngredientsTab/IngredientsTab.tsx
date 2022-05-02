@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import Animated, { FadeIn } from 'react-native-reanimated';
 import Colors from '../../constants/Colors';
 import useRecipe from '../../hooks/useRecipe';
 import { IngredientsTabProps } from '../../types/ingredientsTab';
@@ -12,10 +13,12 @@ export default function IngredientsTab({ ingredients }: IngredientsTabProps) {
   return (
     <View style={styles.container}>
       {data!.map((ingredient, index) => (
-        <View key={index} style={styles.ingredient}>
-          <Paragraph>{ingredient.name}</Paragraph>
-          <Paragraph style={styles.amount}>{ingredient.amount}</Paragraph>
-        </View>
+        <Animated.View key={index} entering={FadeIn}>
+          <View key={index} style={styles.ingredient}>
+            <Paragraph>{ingredient.name}</Paragraph>
+            <Paragraph style={styles.amount}>{ingredient.amount}</Paragraph>
+          </View>
+        </Animated.View>
       ))}
     </View>
   );

@@ -10,6 +10,7 @@ export default function StepsForm({ steps, error, addStep }: StepsFormProps) {
   const [step, setStep] = useState('');
 
   const handleAdd = () => {
+    if (step.length === 0) return;
     addStep(step);
     setStep('');
   };
